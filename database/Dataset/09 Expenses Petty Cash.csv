@@ -1,0 +1,169 @@
+expense_id,date,category,description,amount_pkr,submitted_by,approved_by,receipt_photo_attached,duplicate_flag,approval_status
+E00001,2025-11-01,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2789.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00002,2025-11-01,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,414.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00003,2025-11-01,Maintenance,Maintenance - Melody Bakery Rawalpindi,1679.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00004,2025-11-02,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,8657.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00005,2025-11-03,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,8426.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00006,2025-11-03,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,1554.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00007,2025-11-04,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2796.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00008,2025-11-04,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2838.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00009,2025-11-04,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,2739.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00010,2025-11-05,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1713.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00011,2025-11-05,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2886.0,S05,Owner (Remote Approval),YES,NO,Rejected
+E00012,2025-11-06,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2789.0,S06,Owner (Remote Approval),YES,YES,Approved
+E00013,2025-11-06,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,539.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00014,2025-11-07,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2522.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00015,2025-11-08,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,1420.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00016,2025-11-09,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,1554.0,S03,Owner (Remote Approval),YES,YES,Approved
+E00017,2025-11-09,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1317.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00018,2025-11-10,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,837.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00019,2025-11-11,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7574.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00020,2025-11-11,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,6557.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00021,2025-11-12,Maintenance,Maintenance - Melody Bakery Rawalpindi,5250.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00022,2025-11-13,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,802.0,S02,Owner (Remote Approval),YES,NO,Rejected
+E00023,2025-11-13,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7228.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00024,2025-11-13,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,840.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00025,2025-11-14,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,687.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00026,2025-11-15,Maintenance,Maintenance - Melody Bakery Rawalpindi,2375.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00027,2025-11-15,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1987.0,S08,Owner (Remote Approval),YES,NO,Rejected
+E00028,2025-11-16,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,12631.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00029,2025-11-17,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,5681.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00030,2025-11-17,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,12254.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00031,2025-11-18,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,7098.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00032,2025-11-19,Maintenance,Maintenance - Melody Bakery Rawalpindi,2549.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00033,2025-11-19,Maintenance,Maintenance - Melody Bakery Rawalpindi,4755.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00034,2025-11-19,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,10615.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00035,2025-11-20,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7050.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00036,2025-11-20,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2103.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00037,2025-11-21,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,6664.0,S01,Owner (Remote Approval),YES,NO,Rejected
+E00038,2025-11-21,Maintenance,Maintenance - Melody Bakery Rawalpindi,1094.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00039,2025-11-21,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1671.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00040,2025-11-22,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,971.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00041,2025-11-22,Maintenance,Maintenance - Melody Bakery Rawalpindi,1389.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00042,2025-11-23,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,6041.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00043,2025-11-23,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,680.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00044,2025-11-24,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,5155.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00045,2025-11-24,Maintenance,Maintenance - Melody Bakery Rawalpindi,5294.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00046,2025-11-25,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,10598.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00047,2025-11-25,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1236.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00048,2025-11-26,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,593.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00049,2025-11-26,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1541.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00050,2025-11-27,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,3207.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00051,2025-11-27,Maintenance,Maintenance - Melody Bakery Rawalpindi,2240.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00052,2025-11-28,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,336.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00053,2025-11-29,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,920.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00054,2025-11-29,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,314.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00055,2025-11-30,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,6431.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00056,2025-12-01,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,902.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00057,2025-12-01,Maintenance,Maintenance - Melody Bakery Rawalpindi,4762.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00058,2025-12-02,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,3474.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00059,2025-12-02,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2094.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00060,2025-12-02,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2544.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00061,2025-12-03,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13029.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00062,2025-12-03,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2814.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00063,2025-12-03,Maintenance,Maintenance - Melody Bakery Rawalpindi,4871.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00064,2025-12-04,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,5553.0,S05,Owner (Remote Approval),YES,NO,Rejected
+E00065,2025-12-05,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,7734.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00066,2025-12-05,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,6367.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00067,2025-12-05,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,8488.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00068,2025-12-06,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1655.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00069,2025-12-06,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,490.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00070,2025-12-06,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1183.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00071,2025-12-07,Maintenance,Maintenance - Melody Bakery Rawalpindi,1725.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00072,2025-12-07,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,6805.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00073,2025-12-08,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7496.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00074,2025-12-09,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2376.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00075,2025-12-09,Maintenance,Maintenance - Melody Bakery Rawalpindi,3073.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00076,2025-12-09,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2179.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00077,2025-12-10,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1879.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00078,2025-12-10,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1570.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00079,2025-12-10,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1005.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00080,2025-12-11,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1146.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00081,2025-12-11,Maintenance,Maintenance - Melody Bakery Rawalpindi,2727.0,S03,Owner (Remote Approval),YES,NO,Rejected
+E00082,2025-12-11,Maintenance,Maintenance - Melody Bakery Rawalpindi,3313.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00083,2025-12-12,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,11557.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00084,2025-12-12,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,8138.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00085,2025-12-12,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2137.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00086,2025-12-13,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,11259.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00087,2025-12-14,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,968.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00088,2025-12-15,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1237.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00089,2025-12-15,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,3562.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00090,2025-12-16,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1032.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00091,2025-12-17,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,5304.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00092,2025-12-17,Maintenance,Maintenance - Melody Bakery Rawalpindi,1775.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00093,2025-12-18,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,5723.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00094,2025-12-18,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1111.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00095,2025-12-18,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1570.0,S03,Owner (Remote Approval),YES,YES,Rejected
+E00096,2025-12-19,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2529.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00097,2025-12-20,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2467.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00098,2025-12-20,Maintenance,Maintenance - Melody Bakery Rawalpindi,4563.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00099,2025-12-21,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,6653.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00100,2025-12-22,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,3799.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00101,2025-12-22,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7748.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00102,2025-12-23,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,966.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00103,2025-12-24,Maintenance,Maintenance - Melody Bakery Rawalpindi,629.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00104,2025-12-24,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,14376.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00105,2025-12-24,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,2023.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00106,2025-12-25,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2354.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00107,2025-12-25,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1455.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00108,2025-12-26,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,1368.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00109,2025-12-26,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1181.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00110,2025-12-26,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,421.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00111,2025-12-27,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1135.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00112,2025-12-27,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,6970.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00113,2025-12-28,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,622.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00114,2025-12-28,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2206.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00115,2025-12-29,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13396.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00116,2025-12-30,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2479.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00117,2025-12-30,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1227.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00118,2025-12-30,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,9251.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00119,2025-12-31,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,11530.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00120,2026-01-01,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2017.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00121,2026-01-02,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,11742.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00122,2026-01-03,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,14253.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00123,2026-01-03,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13711.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00124,2026-01-04,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1911.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00125,2026-01-05,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,7048.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00126,2026-01-05,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,978.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00127,2026-01-06,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,5071.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00128,2026-01-07,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,6060.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00129,2026-01-08,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,703.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00130,2026-01-09,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,661.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00131,2026-01-09,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2050.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00132,2026-01-10,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,11451.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00133,2026-01-11,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13078.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00134,2026-01-12,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,2970.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00135,2026-01-12,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1473.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00136,2026-01-13,Maintenance,Maintenance - Melody Bakery Rawalpindi,4953.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00137,2026-01-13,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1435.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00138,2026-01-14,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,8943.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00139,2026-01-15,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1491.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00140,2026-01-15,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2187.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00141,2026-01-16,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,12229.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00142,2026-01-16,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1309.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00143,2026-01-16,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,3512.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00144,2026-01-17,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13517.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00145,2026-01-18,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1874.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00146,2026-01-18,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,10935.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00147,2026-01-19,Maintenance,Maintenance - Melody Bakery Rawalpindi,4915.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00148,2026-01-19,Maintenance,Maintenance - Melody Bakery Rawalpindi,3884.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00149,2026-01-19,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,14040.0,S02,Owner (Remote Approval),YES,NO,Approved
+E00150,2026-01-20,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,1740.0,S01,Owner (Remote Approval),YES,NO,Approved
+E00151,2026-01-20,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1352.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00152,2026-01-20,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,4307.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00153,2026-01-21,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,1517.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00154,2026-01-21,Equipment Repair,Equipment Repair - Melody Bakery Rawalpindi,8313.0,S08,Owner (Remote Approval),YES,NO,Approved
+E00155,2026-01-22,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,14990.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00156,2026-01-22,Electricity Bill,Electricity Bill - Melody Bakery Rawalpindi,13517.0,S06,Owner (Remote Approval),YES,YES,Approved
+E00157,2026-01-23,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,455.0,S07,Owner (Remote Approval),YES,NO,Approved
+E00158,2026-01-24,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1023.0,S03,Owner (Remote Approval),YES,NO,Approved
+E00159,2026-01-24,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,501.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00160,2026-01-24,Miscellaneous,Miscellaneous - Melody Bakery Rawalpindi,1697.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00161,2026-01-25,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1142.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00162,2026-01-26,Packaging Refill,Packaging Refill - Melody Bakery Rawalpindi,2403.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00163,2026-01-26,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,1029.0,S04,Owner (Remote Approval),YES,NO,Approved
+E00164,2026-01-26,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2349.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00165,2026-01-27,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,978.0,S06,Owner (Remote Approval),YES,YES,Rejected
+E00166,2026-01-28,Cleaning Supplies,Cleaning Supplies - Melody Bakery Rawalpindi,1313.0,S06,Owner (Remote Approval),YES,NO,Approved
+E00167,2026-01-29,Transport/Fuel,Transport/Fuel - Melody Bakery Rawalpindi,2349.0,S05,Owner (Remote Approval),YES,NO,Approved
+E00168,2026-01-29,Gas Bill,Gas Bill - Melody Bakery Rawalpindi,8998.0,S07,Owner (Remote Approval),YES,NO,Approved

@@ -1,0 +1,13 @@
+product_id,product_name,category,flour_per_batch_kg,expected_yield_units,unit_weight_g,cost_per_unit_pkr,selling_price_pkr,tolerance_pct
+P01,Kara Biscuit,Biscuit,5.0,200,25,8,15,2.0
+P02,Naan Khatai,Biscuit,5.0,180,28,9,18,2.0
+P03,Fruit Cake,Cake,4.0,20,500,180,350,2.0
+P04,Dry Cake,Cake,4.0,24,400,140,280,2.0
+P05,Bread Rusk,Rusk,6.0,150,35,10,20,2.0
+P06,Plain Bun,Bun,6.0,120,50,12,25,2.0
+P07,Cream Bun,Bun,6.0,100,60,18,35,2.0
+P08,Chicken Patties,Savory,5.0,90,70,35,60,2.0
+P09,Khari Biscuit,Biscuit,5.0,220,22,7,14,2.0
+P10,Chocolate Cake,Cake,4.0,18,550,220,420,2.0
+P11,Donuts,Sweet,4.0,80,45,22,45,2.0
+P12,Chocolate Chip Cookies,Cookie,4.0,160,30,15,30,2.0

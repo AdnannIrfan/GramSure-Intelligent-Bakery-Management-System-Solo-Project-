@@ -1,0 +1,7 @@
+staff_id,role,total_batches,flagged_batches,avg_variance_pct,suspicion_score_0_100,risk_level
+S01,Baker,289,205,-4.49,100.0,HIGH
+S03,Baker,320,17,-0.2,8.0,LOW
+S06,Baker,313,19,-0.28,9.3,LOW
+S02,Cashier,312,1,10374.0,0.4,LOW
+S05,Cashier,334,99,47357.0,38.5,MEDIUM
+S08,Cashier,308,0,10424.0,0.0,LOW

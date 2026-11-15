@@ -1,0 +1,559 @@
+﻿
+===== features\branches\BranchesPage.jsx =====
+
+import { useEffect, useState } from 'react';
+import apiClient from '../../services/apiClient';
+import Badge from '../../components/common/Badge';
+
+export default function BranchesPage() {
+  const [branches, setBranches] = useState([]);
+  const [dashboard, setDashboard] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({ name: '', address: '' });
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  async function loadData() {
+    setLoading(true);
+    try {
+      const [branchesRes, dashboardRes] = await Promise.all([
+        apiClient.get('/branches'),
+        apiClient.get('/branches/consolidated-dashboard'),
+      ]);
+      setBranches(branchesRes.data.data);
+      setDashboard(dashboardRes.data.data);
+    } catch (err) {
+      console.error('Failed to load branch data:', err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      await apiClient.post('/branches', form);
+      setShowForm(false);
+      setForm({ name: '', address: '' });
+      loadData();
+    } catch (err) {
+      alert(err.response?.data?.message || 'Failed to create branch');
+    }
+  }
+
+  const inputClass =
+    'border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gramsure-gold focus:border-transparent transition-shadow placeholder:text-gray-400';
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="bg-gradient-to-r from-gramsure-navy to-slate-800 px-6 pt-8 pb-14">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-white">Multi-Branch & Franchise Management</h1>
+            <p className="text-sm text-white/50 mt-1">{branches.length} branch{branches.length !== 1 ? 'es' : ''}</p>
+          </div>
+          <button
+            onClick={() => setShowForm(!showForm)}
+            className="bg-gramsure-gold text-gramsure-navy px-4 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-black/10"
+          >
+            {showForm ? 'Cancel' : '+ New Branch'}
+          </button>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 -mt-8 pb-10 space-y-6">
+        {showForm && (
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 grid grid-cols-1 sm:grid-cols-2 gap-4"
+          >
+            <div className="sm:col-span-2">
+              <h3 className="text-sm font-semibold text-gray-800 mb-1">New Branch Details</h3>
+            </div>
+            <input
+              placeholder="Branch Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              required
+              className={inputClass}
+            />
+            <input
+              placeholder="Address"
+              value={form.address}
+              onChange={(e) => setForm({ ...form, address: e.target.value })}
+              className={inputClass}
+            />
+            <button
+              type="submit"
+              className="sm:col-span-2 bg-gramsure-navy text-white font-semibold py-2.5 rounded-xl text-sm hover:opacity-90 active:scale-[0.99] transition-all"
+            >
+              Save Branch
+            </button>
+          </form>
+        )}
+
+        {loading ? (
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-3">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="h-10 bg-gray-100 rounded-lg animate-pulse" />
+            ))}
+          </div>
+        ) : (
+          <>
+            {dashboard?.underperformingBranches?.length > 0 && (
+              <div className="bg-[#f97316]/5 border border-[#f97316]/20 rounded-2xl p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-6 h-6 rounded-lg bg-[#f97316]/10 flex items-center justify-center text-[#f97316] text-xs font-bold shrink-0">
+                    !
+                  </span>
+                  <p className="text-sm font-semibold text-[#9a5117]">Underperforming Branches</p>
+                </div>
+                <ul className="text-sm text-[#9a5117] space-y-1.5 pl-8">
+                  {dashboard.underperformingBranches.map((b) => (
+                    <li key={b.branchId} className="list-disc">
+                      {b.branchName} â€” {b.percentBelowAverage}% below average revenue
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50/80 text-gray-500 text-xs uppercase tracking-wide">
+                  <tr>
+                    <th className="text-left px-5 py-3 font-semibold">Branch</th>
+                    <th className="text-left px-5 py-3 font-semibold">Address</th>
+                    <th className="text-left px-5 py-3 font-semibold">30-day Revenue</th>
+                    <th className="text-left px-5 py-3 font-semibold">Open Fraud Flags</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {branches.map((b) => {
+                    const perf = dashboard?.branches?.find((d) => d.branchId === b.id);
+                    return (
+                      <tr key={b.id} className="border-t border-gray-50 hover:bg-gray-50/60 transition-colors">
+                        <td className="px-5 py-3 font-medium text-gray-800">{b.name}</td>
+                        <td className="px-5 py-3 text-gray-600">{b.address}</td>
+                        <td className="px-5 py-3 font-medium text-gray-800">Rs. {perf?.totalRevenue?.toFixed(0) ?? 0}</td>
+                        <td className="px-5 py-3">
+                          {perf?.openFraudFlags > 0 ? (
+                            <Badge tone="critical">{perf.openFraudFlags}</Badge>
+                          ) : (
+                            <Badge tone="good">0</Badge>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {branches.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="px-5 py-12 text-center text-gray-400">
+                        No branches added yet.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+===== services\apiClient.js =====
+
+import axios from 'axios';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+
+const apiClient = axios.create({
+  baseURL: API_BASE_URL,
+  headers: { 'Content-Type': 'application/json' },
+});
+
+
+apiClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem('gramsure_access_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+
+let isRefreshing = false;
+let refreshQueue = [];
+
+apiClient.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      if (isRefreshing) {
+        return new Promise((resolve, reject) => {
+          refreshQueue.push({ resolve, reject });
+        }).then((token) => {
+          originalRequest.headers.Authorization = `Bearer ${token}`;
+          return apiClient(originalRequest);
+        });
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      const refreshToken = localStorage.getItem('gramsure_refresh_token');
+      if (!refreshToken) {
+        localStorage.clear();
+        window.location.href = '/login';
+        return Promise.reject(error);
+      }
+
+      try {
+        const { data } = await axios.post(`${API_BASE_URL}/auth/refresh`, { refreshToken });
+        const newAccessToken = data.data.accessToken;
+        localStorage.setItem('gramsure_access_token', newAccessToken);
+
+        refreshQueue.forEach(({ resolve }) => resolve(newAccessToken));
+        refreshQueue = [];
+
+        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+        return apiClient(originalRequest);
+      } catch (refreshError) {
+        refreshQueue.forEach(({ reject }) => reject(refreshError));
+        refreshQueue = [];
+        localStorage.clear();
+        window.location.href = '/login';
+        return Promise.reject(refreshError);
+      } finally {
+        isRefreshing = false;
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
+
+export default apiClient;
+
+===== routes\AppRoutes.jsx =====
+
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+
+import LoginPage from '../pages/LoginPage';
+import DashboardPage from '../pages/DashboardPage';
+import RecipePage from '../features/recipe/RecipePage';
+import ProcurementPage from '../features/procurement/ProcurementPage';
+import InventoryPage from '../features/inventory/InventoryPage';
+import ProductionPage from '../features/production/ProductionPage';
+import SalesPage from '../features/sales/SalesPage';
+import ExpensesPage from '../features/expenses/ExpensesPage';
+import StaffPage from '../features/staff/StaffPage';
+import FinancialDashboardPage from '../features/financial-dashboard/FinancialDashboardPage';
+import FraudAlertsPage from '../features/fraud-alerts/FraudAlertsPage';
+import ForecastingPage from '../features/forecasting/ForecastingPage';
+import NotificationsPage from '../features/notifications/NotificationsPage';
+import BranchesPage from '../features/branches/BranchesPage';
+import MainLayout from '../components/layout/MainLayout';
+
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return <div className="flex items-center justify-center h-screen">Loading...</div>;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+  return children;
+}
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<DashboardPage />} />
+        <Route path="recipes" element={<RecipePage />} />
+        <Route path="procurement" element={<ProcurementPage />} />
+        <Route path="inventory" element={<InventoryPage />} />
+        <Route path="production" element={<ProductionPage />} />
+        <Route path="sales" element={<SalesPage />} />
+        <Route path="expenses" element={<ExpensesPage />} />
+        <Route path="staff" element={<StaffPage />} />
+        <Route path="financial-dashboard" element={<FinancialDashboardPage />} />
+        <Route path="fraud-alerts" element={<FraudAlertsPage />} />
+        <Route path="forecasting" element={<ForecastingPage />} />
+        <Route path="notifications" element={<NotificationsPage />} />
+        <Route path="branches" element={<BranchesPage />} />
+      </Route>
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
+
+===== components\layout\MainLayout.jsx =====
+
+import { Outlet, NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+
+const NAV_SECTIONS = [
+  {
+    label: 'Overview',
+    items: [{ path: '/', label: 'Dashboard', end: true }],
+  },
+  {
+    label: 'Operations',
+    items: [
+      { path: '/recipes', label: 'Recipes' },
+      { path: '/procurement', label: 'Procurement' },
+      { path: '/inventory', label: 'Inventory' },
+      { path: '/production', label: 'Production' },
+      { path: '/staff', label: 'Staff' },
+    ],
+  },
+  {
+    label: 'Finance',
+    items: [
+      { path: '/sales', label: 'Sales' },
+      { path: '/expenses', label: 'Expenses' },
+      { path: '/financial-dashboard', label: 'P&L' },
+    ],
+  },
+  {
+    label: 'Insights',
+    items: [
+      { path: '/fraud-alerts', label: 'Fraud Alerts' },
+      { path: '/forecasting', label: 'Forecasting' },
+      { path: '/notifications', label: 'Notifications' },
+    ],
+  },
+  {
+    label: 'System',
+    items: [{ path: '/branches', label: 'Branches' }],
+  },
+];
+
+export default function MainLayout() {
+  const { user, logout } = useAuth();
+
+  const initials = user?.name
+    ? user.name.split(' ').map((n) => n[0]).slice(0, 2).join('').toUpperCase()
+    : '?';
+
+  return (
+    <div className="flex h-screen overflow-hidden font-sans">
+      {/* Sidebar */}
+      <aside className="w-64 bg-gramsure-navy text-white flex flex-col shrink-0 border-r border-black/20">
+        <div className="px-5 py-5 border-b border-white/10 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gramsure-gold to-amber-600 flex items-center justify-center shrink-0 shadow-lg shadow-gramsure-gold/20">
+            <span className="text-gramsure-navy font-bold text-sm">G</span>
+          </div>
+          <div className="min-w-0">
+            <h1 className="text-base font-bold text-white leading-tight tracking-tight">GramSure</h1>
+            <p className="text-[10px] text-white/35 leading-tight uppercase tracking-wider mt-0.5">
+              Bakery Management
+            </p>
+          </div>
+        </div>
+
+        <nav className="flex-1 overflow-y-auto py-3 px-3 space-y-4">
+          {NAV_SECTIONS.map((section) => (
+            <div key={section.label}>
+              <p className="px-3 mb-1 text-[10px] font-semibold uppercase tracking-wider text-white/25">
+                {section.label}
+              </p>
+              <div className="space-y-0.5">
+                {section.items.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    end={item.end}
+                    className={({ isActive }) =>
+                      `group flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all relative ${
+                        isActive
+                          ? 'bg-gramsure-gold text-gramsure-navy font-semibold shadow-sm'
+                          : 'text-white/55 hover:bg-white/[0.06] hover:text-white'
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        <span
+                          className={`w-1 h-1 rounded-full shrink-0 transition-colors ${
+                            isActive ? 'bg-gramsure-navy' : 'bg-white/20 group-hover:bg-white/40'
+                          }`}
+                        />
+                        {item.label}
+                      </>
+                    )}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          ))}
+        </nav>
+
+        <div className="px-3 py-3 border-t border-white/10">
+          <div className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-white/[0.06] transition-colors cursor-default">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gramsure-gold/25 to-gramsure-gold/10 border border-gramsure-gold/20 flex items-center justify-center shrink-0">
+              <span className="text-xs font-bold text-gramsure-gold">{initials}</span>
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-medium text-white truncate">{user?.name}</p>
+              <p className="text-[11px] text-white/35 capitalize">{user?.role}</p>
+            </div>
+          </div>
+          <button
+            onClick={logout}
+            className="mt-1 w-full text-left px-2 py-2 text-xs font-medium text-white/40 hover:text-red-300 hover:bg-white/[0.06] rounded-lg transition-colors"
+          >
+            Log out
+          </button>
+        </div>
+      </aside>
+
+      {/* Main content */}
+      <main className="flex-1 overflow-y-auto bg-gray-50">
+        <Outlet />
+      </main>
+    </div>
+  );
+}
+
+===== context\AuthContext.jsx =====
+
+import { createContext, useState, useEffect } from 'react';
+import apiClient from '../services/apiClient';
+
+export const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadUserFromToken();
+  }, []);
+
+  async function loadUserFromToken() {
+    const token = localStorage.getItem('gramsure_access_token');
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const { data } = await apiClient.get('/auth/me');
+      setUser(data.data);
+    } catch (err) {
+      localStorage.clear();
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function login(phone, password) {
+    const { data } = await apiClient.post('/auth/login', { phone, password });
+    const { user: loggedInUser, accessToken, refreshToken } = data.data;
+
+    localStorage.setItem('gramsure_access_token', accessToken);
+    localStorage.setItem('gramsure_refresh_token', refreshToken);
+    setUser(loggedInUser);
+
+    return loggedInUser;
+  }
+
+  function logout() {
+    localStorage.clear();
+    setUser(null);
+  }
+
+  const value = { user, loading, login, logout, isAuthenticated: !!user };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}
+
+===== components\common\Card.jsx =====
+
+export default function Card({ title, value, subtitle, tone = 'default', className = '' }) {
+  const toneStyles = {
+    default: {
+      bg: 'bg-white',
+      text: 'text-gray-900',
+      accent: 'bg-gray-100',
+      icon: 'ðŸ“Š',
+    },
+    good: {
+      bg: 'bg-white',
+      text: 'text-gray-900',
+      accent: 'bg-[#16a34a]/10',
+      icon: 'âœ“',
+      iconColor: 'text-[#16a34a]',
+    },
+    warn: {
+      bg: 'bg-white',
+      text: 'text-gray-900',
+      accent: 'bg-[#f97316]/10',
+      icon: '!',
+      iconColor: 'text-[#f97316]',
+    },
+    critical: {
+      bg: 'bg-white',
+      text: 'text-gray-900',
+      accent: 'bg-[#dc2626]/10',
+      icon: 'âš ',
+      iconColor: 'text-[#dc2626]',
+    },
+  };
+
+  const style = toneStyles[tone] || toneStyles.default;
+
+  return (
+    <div
+      className={`rounded-2xl shadow-sm border border-gray-100 p-4 ${style.bg} ${style.text} hover:shadow-md transition-shadow ${className}`}
+    >
+      <div className="flex items-start justify-between">
+        <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">{title}</p>
+        {tone !== 'default' && (
+          <span className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold ${style.accent} ${style.iconColor}`}>
+            {style.icon}
+          </span>
+        )}
+      </div>
+      <p className="text-2xl font-bold mt-2">{value}</p>
+      {subtitle && <p className="text-xs mt-1 text-gray-400">{subtitle}</p>}
+    </div>
+  );
+}
+
+===== components\common\Badge.jsx =====
+
+const TONE_STYLES = {
+  good: 'bg-[#16a34a]/10 text-[#16a34a]',
+  warn: 'bg-[#f97316]/10 text-[#f97316]',
+  critical: 'bg-[#dc2626]/10 text-[#dc2626]',
+  neutral: 'bg-gray-100 text-gray-600',
+};
+
+export default function Badge({ children, tone = 'neutral' }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold ${TONE_STYLES[tone]}`}
+    >
+      {children}
+    </span>
+  );
+}

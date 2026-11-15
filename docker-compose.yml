@@ -1,0 +1,87 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg15
+    container_name: gramsure-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: gramsure
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./database/seeds/seed_data.sql:/docker-entrypoint-initdb.d/2-seed.sql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gramsure-backend
+    restart: unless-stopped
+    ports:
+      - '5000:5000'
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: gramsure
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      AI_SERVICE_URL: http://ai-service:8000
+      CLIENT_URL: http://localhost:5173
+      JWT_SECRET: ${JWT_SECRET:-change_me_in_production}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change_me_too}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: gramsure-ai-service
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    environment:
+      ENV: production
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: gramsure
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      ALLOWED_ORIGINS: http://backend:5000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./ai-service:/app
+
+  frontend-web:
+    build:
+      context: ./frontend-web
+      dockerfile: Dockerfile
+    container_name: gramsure-frontend-web
+    restart: unless-stopped
+    ports:
+      - '5173:80'
+    environment:
+      VITE_API_BASE_URL: http://localhost:5000/api
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

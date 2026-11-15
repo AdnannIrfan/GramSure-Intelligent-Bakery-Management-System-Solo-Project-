@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "GramSure",
+    "slug": "gramsure",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1e293b"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gramsure.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "GramSure uses your camera for selfie check-in to verify staff attendance and prevent buddy punching."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1e293b"
+      },
+      "package": "com.gramsure.app",
+      "permissions": [
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiBaseUrl": "http://192.168.100.67:5000/api"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "GramSure uses your camera for selfie check-in to verify staff attendance."
+        }
+      ],
+      "expo-status-bar"
+    ]
+  }
+}

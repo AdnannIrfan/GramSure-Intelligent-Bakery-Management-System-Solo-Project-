@@ -1,0 +1,9 @@
+staff_id,name,role,shift,monthly_salary_pkr,join_date
+S01,Imtiaz Ahmed,Baker,Morning,32000,6/1/2024
+S02,Waseem Akram,Cashier,Morning,25000,8/15/2024
+S03,Ali Raza,Baker,Evening,32000,3/10/2024
+S04,Bilal Hussain,Helper,Morning,20000,1/5/2025
+S05,Farhan Sheikh,Cashier,Evening,25000,11/20/2024
+S06,Nasir Iqbal,Baker,Morning,32000,2/1/2025
+S07,Fahad Sheikh,Packer,Morning,22000,9/1/2024
+S08,Mazhar ,Cashier,Morning,25000,4/1/2025

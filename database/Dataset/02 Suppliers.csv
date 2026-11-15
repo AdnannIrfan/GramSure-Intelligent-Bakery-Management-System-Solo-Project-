@@ -1,0 +1,9 @@
+supplier_id,supplier_name,material,city,base_rating
+SUP01,Al-Fateh Flour Mills,Maida Flour,Rawalpindi,4.2
+SUP02,Bismillah Sugar Traders,Sugar,Rawalpindi,4.5
+SUP03,Al-Noor Ghee & Oil,Dalda Ghee,Islamabad,3.7
+SUP04,Punjab Dairy Suppliers,Milk Powder,Rawalpindi,4.0
+SUP05,National Foods Distributors,Baking Powder,Islamabad,4.6
+SUP06,Rawalpindi Packaging Co,Packaging,Rawalpindi,4.1
+SUP07,Sadiq Egg Traders,Eggs,Rawalpindi,4.3
+SUP08,Metro Cash & Carry,Cocoa Powder,Islamabad,4.4
